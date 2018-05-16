@@ -31,7 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. **DONE** Создайте бренч Task 1 для первого задания.
 
 2. **DONE** Создайте компонент ProductComponent. Используйте его в AppComponent.
->ng generate component ProductComponent -d
+>ng generate component Product
  
 3. **DONE** Добавьте несколько простых свойств для компонента ProductComponent и несколько свойств в виде массива. Выведите их в темплейт:
     - name: string
@@ -51,11 +51,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    
    >ng generate service ProductsService
    
-   >ng generate component ProductListComponent
+   >ng generate component ProductList
 
-6. Создайте компонент (ng g c cart) и используйте его в AppComponent темплейте. Компонент должен отображать список купленых товаров. 
+6. *In progress* Создайте компонент (ng g c cart) и используйте его в AppComponent темплейте. Компонент должен отображать список купленых товаров. 
    Организуйте список в виде отдельного сервиса - CartService.  Используйте директиву *ngIf + else для отображения корзины (CartComponent), если она не пустая.
    Если корзина пустая отображать другой альтернативный блок с сообщением о пустой корзине.
+   >ng generate component Cart
+   
+   >ng generate service CartService
 
 7. Реализуйте любую дополнительную функциональность.
 

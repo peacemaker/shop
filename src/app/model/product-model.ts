@@ -1,3 +1,5 @@
+import { Category } from '../enum/category-enum';
+
 export interface IProduct {
   /**
    * Returns a string representation of an object.
@@ -6,23 +8,43 @@ export interface IProduct {
   toString(): string;
 
   getName(): string;
+  getDescription(): string;
+  getCategory(): Category;
   getPrice(): number;
   isAvailable(): boolean;
 }
 
 export class ProductModel implements IProduct {
   private name: string;
+  private description: string;
+  private category: Category;
   private price: number;
   private available: boolean;
 
-  constructor(name: string, price: number, available: boolean) {
+  constructor(
+    name: string,
+    description : string,
+    category: Category,
+    price: number,
+    available: boolean
+  ) {
     this.name = name;
+    this.description = description;
+    this.category = category;
     this.price = price;
     this.available = (available === true);
   }
 
   getName(): string {
     return this.name;
+  }
+
+  getDescription(): string {
+    return this.description;
+  }
+
+  getCategory(): Category {
+    return this.category;
   }
 
   getPrice(): number {
@@ -38,5 +60,4 @@ export class ProductModel implements IProduct {
       + 'price = ' + this.price + ' '
       + 'available = ' + ((this.available === true) ? ' true' : 'false');
   }
-
 }

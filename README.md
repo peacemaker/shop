@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. **DONE** Создайте компонент ProductComponent. Используйте его в AppComponent.
 >ng generate component ProductComponent -d
  
-3. Добавьте несколько простых свойств для компонента ProductComponent и несколько свойств в виде массива. Выведите их в темплейт:
+3. **DONE** Добавьте несколько простых свойств для компонента ProductComponent и несколько свойств в виде массива. Выведите их в темплейт:
     - name: string
     - description: string
     - price: number
@@ -41,8 +41,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - isAvailable: boolean
     - ...
 
-4. Добавьте кнопку Buy. Реализуйте обработчик события клик onBuy(), который выводит в консоль сообщение о покупке товара.
-   Попробуйте реализовать функционал по добавлению товара в корзину (optional).
+4. **DONE** Добавьте кнопку Buy. Реализуйте обработчик события клик onBuy(), который выводит в консоль сообщение о покупке товара.
+   
+   *In progress* Попробуйте реализовать функционал по добавлению товара в корзину (optional).
 
 5. Создайте сервис ProductsService, который будет возвращать товары. Модель товара опишите интерфейсом и классом, который реализует данный интерфейс.
    Зарегистрируйте сервис в AppModule. 

@@ -10,7 +10,7 @@ export class ProductsService {
 
   constructor() { }
 
-  getProduct() {
+  getProducts() {
     return [
       new ProductModel(
         'Product A',

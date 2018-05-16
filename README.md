@@ -49,7 +49,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    Зарегистрируйте сервис в AppModule. 
    Создайте компонент ProductListComponent. Используйте в нем сервис ProductsService, отобразите данные на станице c помощью директивы *ngFor.
    
-   >ng generate service ProductsService
+   >ng generate service Products
    
    >ng generate component ProductList
 
@@ -58,7 +58,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    Если корзина пустая отображать другой альтернативный блок с сообщением о пустой корзине.
    >ng generate component Cart
    
-   >ng generate service CartService
+   >ng generate service Cart
 
 7. Реализуйте любую дополнительную функциональность.
 

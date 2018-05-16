@@ -1,14 +1,14 @@
 <div class="card">
   <img src="{{imageUrl}}" alt="Avatar">
   <div class="container">
-    <h4><b>{{name}}</b></h4>
+    <h4><b>{{product.getName()}}</b></h4>
     <p>Category: {{category.toString()}}</p>
     <p>{{description}}</p>
     Available?
-    <div *ngIf="isAvailable; then thenBlock else elseBlock"></div>
+    <div *ngIf="product.isAvailable(); then thenBlock else elseBlock"></div>
     <ng-template #thenBlock><div class="yes">Yes</div></ng-template>
     <ng-template #elseBlock><div class="no">No</div></ng-template>
-    <p>Price: {{price}}</p>
+    <p>Price: {{product.getPrice()}}</p>
     <button (click)="onBuy()">Buy</button>
   </div>
 </div>

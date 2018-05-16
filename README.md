@@ -45,9 +45,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    
    *In progress* Попробуйте реализовать функционал по добавлению товара в корзину (optional).
 
-5. Создайте сервис ProductsService, который будет возвращать товары. Модель товара опишите интерфейсом и классом, который реализует данный интерфейс.
+5. **DONE** Создайте сервис ProductsService, который будет возвращать товары. Модель товара опишите интерфейсом и классом, который реализует данный интерфейс.
    Зарегистрируйте сервис в AppModule. 
    Создайте компонент ProductListComponent. Используйте в нем сервис ProductsService, отобразите данные на станице c помощью директивы *ngFor.
+   
+   >ng generate service ProductsService
+   
+   >ng generate component ProductListComponent
 
 6. Создайте компонент (ng g c cart) и используйте его в AppComponent темплейте. Компонент должен отображать список купленых товаров. 
    Организуйте список в виде отдельного сервиса - CartService.  Используйте директиву *ngIf + else для отображения корзины (CartComponent), если она не пустая.

@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   //price: number = null;
   category: Category = Category.NA;
   //isAvailable: boolean;
-  imageUrl: string = require("./img/img_avatar.png");
+  imageUrl: string = "assets/img_avatar.png";
 
   constructor() {
   }

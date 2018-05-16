@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Category } from '../enum/category-enum';
-import { IProduct, ProductModel } from '../model/product-model';
+import { Category } from '../enum/category.enum';
+import { IProduct, ProductModel } from '../model/product.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ProductModel} from "../model/product-model";
-import {CartService} from "../service/cart-service";
+import {ProductModel} from "../model/product.model";
+import {CartService} from "../service/cart.service";
 
 @Component({
   providers: [CartService],
 
   selector: 'app-cart',
-  templateUrl: './cart-component.html',
-  styleUrls: ['./cart-component.css']
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
 

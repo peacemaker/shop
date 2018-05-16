@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IProduct, ProductModel } from '../model/product-model';
-import { ProductsService } from '../service/products-service';
+import { IProduct, ProductModel } from '../model/product.model';
+import { ProductsService } from '../service/products.service';
 
 @Component({
   providers: [ProductsService],
 
   selector: 'app-product-list-component',
-  templateUrl: './product-list-component.html',
-  styleUrls: ['./product-list-component.css']
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
   products: ProductModel[];

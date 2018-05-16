@@ -1,4 +1,4 @@
-import { Category } from '../enum/category-enum';
+import { Category } from '../enum/category.enum';
 
 export interface IProduct {
   /**

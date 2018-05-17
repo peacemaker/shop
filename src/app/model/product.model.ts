@@ -15,6 +15,7 @@ export interface IProduct {
 }
 
 export class ProductModel implements IProduct {
+
   private name: string;
   private description: string;
   private category: Category;

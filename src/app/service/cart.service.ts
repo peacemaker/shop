@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
+
 import {Category} from "../enum/category.enum";
 import {ProductModel} from "../model/product.model";
 
@@ -7,17 +10,16 @@ import {ProductModel} from "../model/product.model";
 })
 export class CartService {
 
-  constructor() { }
+  private products : Observable<ProductModel[]>;
 
-  getProducts() {
-    return [
-      new ProductModel(
-        'Product 1',
-        'test',
-        Category.Notebook,
-        255,
-        true
-      ),
-    ];
+  constructor() {
   }
+
+  getProducts(): Observable<ProductModel[]>  {
+    return this.products;
+  }
+
+  // addProduct(product: ProductModel) {
+  //   this.products.push(product);
+  // }
 }

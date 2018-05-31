@@ -1,0 +1,8 @@
+<hr>
+<h2>Products</h2>
+<hr>
+<app-product-component
+        *ngFor="let product of products"
+        [product]="product"
+        (addProduct)="onAddToCard($event)">
+</app-product-component>

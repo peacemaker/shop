@@ -1,0 +1,9 @@
+div.parent {
+    display: flex;
+}
+div.narrow {
+    width: 50%;
+}
+div.wide {
+    flex: 1;
+}

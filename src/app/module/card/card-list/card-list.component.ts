@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductModel} from "../../../model/product.model";
 import {CardService} from "../../../service/card.service";
 
@@ -8,27 +8,51 @@ import {CardService} from "../../../service/card.service";
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit {
-  @Input() products: Array<ProductModel>;
+  //@Input() products: Array<ProductModel>;
 
   constructor(
-    public cardService : CardService
-  ) { }
+    public cardService: CardService
+  ) {
+  }
 
   ngOnInit() {
-    this.products = this.cardService.getProducts();
   }
 
-  getCount() : number {
-    return this.products.length;
+  /**
+   *
+   * @returns {IterableIterator<[ProductModel , number]>}
+   */
+  getProducts() {
+    return this.cardService.getProducts().entries();
   }
 
-  getTotal() : number {
+  /**
+   *
+   * @returns {number}
+   */
+  getCount(): number {
+    return this.cardService.getCount();
+  }
+
+  /**
+   *
+   * @returns {number}
+   */
+  getTotal(): number {
     return this.cardService.getTotal();
   }
 
+  /**
+   *
+   * @param {ProductModel} product
+   */
   onRemoveFromCard(product: ProductModel): void {
     this.cardService.removeProduct(product);
     console.log('CardListComponent.onRemoveFromCard()', product);
   }
 
+  onRemoveAllProducts(): void {
+    this.cardService.removeAllProducts();
+    console.log('CardListComponent.onRemoveAllProducts()');
+  }
 }

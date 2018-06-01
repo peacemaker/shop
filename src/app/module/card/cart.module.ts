@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {CardListComponent} from "./card-list/card-list.component";
 import {CardComponent} from "./card/card.component";
+import {KeysPipe} from "../../keys.pipe";
 
 @NgModule({
   imports: [
@@ -10,12 +11,15 @@ import {CardComponent} from "./card/card.component";
   ],
   declarations: [
     CardListComponent,
-    CardComponent
+    CardComponent,
+    KeysPipe
   ],
   exports: [
     CardListComponent,
-    CardComponent
+    CardComponent,
+    KeysPipe
   ],
   bootstrap: [CardListComponent] // @todo Do we need it?
 })
-export class CartModule { }
+export class CartModule {
+}

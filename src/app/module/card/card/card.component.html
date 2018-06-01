@@ -1,10 +1,11 @@
-<div class="card">
-    <img src="{{product.getImage()}}" alt="Avatar">
-    <div class="container">
-        <h4><b>{{product.getName()}}</b></h4>
-        <p>Category: {{product.getCategory()}}</p>
-        <p>{{product.getDescription()}}</p>
-        <p>Price: {{product.getPrice()}}</p>
+<tr>
+    <td>{{product.getId()}}</td>
+    <td>{{product.getName()}}</td>
+    <td>{{product.getCategory()}}</td>
+    <td>{{product.getPrice()}}</td>
+    <td>{{count}}</td>
+    <td>
         <button (click)="onRemoveProduct()">Delete</button>
-    </div>
-</div>
+    </td>
+</tr>
+

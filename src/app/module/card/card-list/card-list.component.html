@@ -1,8 +1,24 @@
 <hr>
 <h2>Cards [count = ({{getCount()}}) total = ({{getTotal()}})]</h2>
 <hr>
-<app-card-component
-        *ngFor="let product of products"
-        [product]="product"
-        (removeProduct)="onRemoveFromCard($event)">
-</app-card-component>
+
+<table>
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>category</th>
+        <th>price</th>
+        <th>count</th>
+        <th>
+            <button (click)="onRemoveAllProducts()">Delete</button>
+        </th>
+    </thead>
+    <tbody>
+        <app-card-component
+                *ngFor="let product of getProducts()"
+                [product]="product[0]"
+                [count]="product[1]"
+                (removeProduct)="onRemoveFromCard($event)">
+        </app-card-component>
+    </tbody>
+</table>

@@ -21,9 +21,13 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  /**
+   *
+   * @param {ProductModel} product
+   */
   onAddToCard(product: ProductModel): void {
     this.cardService.addProduct(product);
-    console.log('ProductListComponent.onAddToCard()', product);
+    console.log('ProductListComponent.onAddToCard2()', product);
   }
 
 }

@@ -1,34 +1,83 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ProductModel} from "../model/product.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
+  items: Map<ProductModel, number> = new Map<ProductModel, number>();
+  count: number = 0;
+  total: number = 0;
 
-  items : Array<ProductModel> = [];
-  total : number = 0;
+  constructor() {
+  }
 
-  constructor() { }
-
-  getProducts() : Array<ProductModel> {
+  /**
+   *
+   * @returns {Map<ProductModel, number>}
+   */
+  getProducts(): Map<ProductModel, number> {
     return this.items;
   }
 
-  addProduct(product: ProductModel) {
-    this.items.push(product);
+  /**
+   *
+   * @param {ProductModel} product
+   */
+  addProduct(product: ProductModel): void {
+    if (!this.items.has(product)) {
+      this.items.set(product, 1);
+    } else {
+      let count = this.items.get(product);
+      this.items.set(product, count + 1);
+      //this.items.push(product);
+    }
     this.total += product.getPrice();
+    this.count++;
   }
 
-  getTotal() : number {
+  /**
+   *
+   * @returns {number}
+   */
+  getCount(): number {
+    return this.count;
+  }
+
+  /**
+   *
+   * @returns {number}
+   */
+  getTotal(): number {
     return this.total;
   }
 
-  removeProduct(product: ProductModel) : void {
-    var index = this.items.indexOf(product, 0);
-    if (index > -1) {
-      this.items.splice(index, 1);
+  /**
+   *
+   * @param {ProductModel} product
+   */
+  removeProduct(product: ProductModel): void {
+    if (!this.items.has(product)) {
+      return;
     }
+
+    let count = this.items.get(product);
+    if (count < 2) {
+      this.items.delete(product);
+    } else {
+      this.items.set(product, count - 1);
+    }
+
+    this.count--;
     this.total -= product.getPrice();
+  }
+
+  /**
+   *
+   */
+  removeAllProducts(): void {
+    this.items = new Map<ProductModel, number>();
+    this.count = 0;
+    this.total = 0;
   }
 }

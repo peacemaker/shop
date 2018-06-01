@@ -9,13 +9,15 @@ import {ProductModel} from "../../../model/product.model";
 export class CardComponent implements OnInit {
   @Output() removeProduct: EventEmitter<ProductModel> = new EventEmitter<ProductModel>();
   @Input() product: ProductModel;
+  @Input() count: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  onRemoveProduct() : void {
+  onRemoveProduct(): void {
     this.removeProduct.emit(this.product);
     console.log('CardComponent.onRemoveProduct()', this.product);
   }

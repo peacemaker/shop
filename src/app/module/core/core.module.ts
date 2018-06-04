@@ -6,8 +6,12 @@ import {ConfigOptionsService} from "../../service/config-options.service";
 import {Constants, ConstantsService} from "../../service/constants.service";
 import {GeneratorService, BaseGeneratorService, GeneratorServiceFactory} from "../../service/generator.service";
 
+import {DemoComponent} from "./demo/demo.component";
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    DemoComponent
+  ],
   imports: [
     CommonModule
   ],
@@ -21,6 +25,9 @@ import {GeneratorService, BaseGeneratorService, GeneratorServiceFactory} from ".
       useFactory: GeneratorServiceFactory(8),
       deps: [GeneratorService]
     }
-  ]
+  ],
+  exports: [
+    DemoComponent
+  ],
 })
 export class CoreModule { }

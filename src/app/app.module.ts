@@ -3,10 +3,9 @@ import {NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core'
 
 import {ProductsModule} from "./module/products/products.module";
 
+import {CoreModule} from "./module/core/core.module";
 import {AppComponent} from './app.component';
 import {CartModule} from "./module/card/cart.module";
-import {Constants, ConstantsService} from "./service/constants.service";
-import {BaseGeneratorService, GeneratorService, GeneratorServiceFactory} from "./service/generator.service";
 
 @NgModule({
   declarations: [
@@ -15,18 +14,12 @@ import {BaseGeneratorService, GeneratorService, GeneratorServiceFactory} from ".
   imports: [
     BrowserModule,
 
+    CoreModule,
+
     ProductsModule,
     CartModule
   ],
-  providers: [
-    GeneratorService,
-    {provide: ConstantsService, useValue: Constants},
-    {
-      provide: BaseGeneratorService,
-      useFactory: GeneratorServiceFactory(8),
-      deps: [GeneratorService]
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

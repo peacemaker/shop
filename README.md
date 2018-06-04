@@ -30,7 +30,7 @@
 5. **Done** Создайте сервис `GeneratorService`, который должен генерировать случайную последовательность символов длины n 
    из набора `a-z`, `A-Z`, `0-9` (n - здается при регистрации сервиса). Зарегистрируйте сервис используя `useFactory`.
 
-6. Создайте или используйте ранее созданный `CoreModule` и зарегистриуйте в нем `LocalStorageService`, `ConfigOptionsService`, `ConstantsService`, `GeneratorService`
+6. **Done** Создайте или используйте ранее созданный `CoreModule` и зарегистриуйте в нем `LocalStorageService`, `ConfigOptionsService`, `ConstantsService`, `GeneratorService`
    Подключите модуль к приложению. Начиная с 6 версии можно испльовать для регистрации сервисов `@Injectable({ providedIn: ...})`
 
 7. Создайте демо-компонент и внедрите перечисленные выше сервисы.  Используйте декоратор `@Optional()`.
@@ -38,7 +38,7 @@
 8. Напишите директиву, которая добавляет обработчик события `click` к хост элементу. 
    Клик изменяет размер шрифта элемента, рамку или что-то другое на Ваше усмотрение. 
    Добавьте `@Input()` для директивы. Используйте `ElementRef`/`Renderer2`
-
+    
 # Shop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.

@@ -1,21 +1,24 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {BaseGeneratorService} from "./service/generator.service";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Shop';
-  content: string;
-
-  constructor(
-    @Inject(BaseGeneratorService) private baseGeneratorService: string
-  ) { }
-
-  ngOnInit() {
-    this.content = this.baseGeneratorService;
-  }
-
 }
+
+// export class AppComponent implements OnInit {
+//   title = 'Shop';
+//   content: string;
+//
+//   constructor(
+//     @Inject(BaseGeneratorService) private baseGeneratorService: string
+//   ) { }
+//
+//   ngOnInit() {
+//     this.content = this.baseGeneratorService;
+//   }
+//
+// }

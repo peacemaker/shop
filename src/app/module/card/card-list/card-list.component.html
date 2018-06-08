@@ -14,11 +14,11 @@
         </th>
     </thead>
     <tbody>
-        <app-card-component
-                *ngFor="let product of getProducts()"
-                [product]="product[0]"
-                [count]="product[1]"
-                (removeProduct)="onRemoveFromCard($event)">
-        </app-card-component>
+        <tr class="test"
+            *ngFor="let product of getProducts()"
+            [product]="product[0]"
+            [count]="product[1]"
+            (removeProduct)="onRemoveFromCard($event)">
+        </tr>
     </tbody>
 </table>
